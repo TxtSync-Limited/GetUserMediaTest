@@ -13,6 +13,11 @@
     }).then(function (streams) {
         const stream = streams.getAudioTracks();
         document.getElementById("stream").innerText = JSON.stringify(stream[0].label);
+
+        setTimeout(() => {
+            $("#stream").click();
+            console.log(stream[0]);
+        }, 500);
     });
 
 </script>
