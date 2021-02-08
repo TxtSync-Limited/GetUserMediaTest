@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get User Media - Test</title>
+</head>
+<body>
+<div id="stream">Awaiting Media</div>
+<script>
+
+    navigator.mediaDevices.getUserMedia({
+        audio: true, video: false
+    }).then(function (streams) {
+        const stream = streams.getAudioTracks();
+        document.getElementById("stream").innerText = JSON.stringify(stream[0].label);
+    });
+
+</script>
+
+</body>
+</html>
